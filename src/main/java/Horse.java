@@ -1,12 +1,10 @@
 public class Horse extends Animal {
-
-    public Horse(String name) {
+    public Horse(String name, String location, String food, int foodCounter, HealthState health) {
         this.name = name;
-        location = "Израиль";
-        food = "сено";
-        foodCounter = 0;
-        counter = 27;
-        health = HealthState.UNHEALTHY;
+        this.location = location;
+        this.food = food;
+        this.foodCounter = foodCounter;
+        this.health = health;
     }
 
     @Override
@@ -14,22 +12,5 @@ public class Horse extends Animal {
         System.out.println("Звук: Иго-го");
     }
 
-    @Override
-    public void eat() {
-        if (foodCounter == 0) {
-            System.out.println("Еды не осталось");
-            return;
-        }
 
-        System.out.println("Ест. Еда:" + food + " Было сена:" + foodCounter);
-        foodCounter--;
-        System.out.println("Осталось сена:" + foodCounter);
-
-    }
-
-
-    @Override
-    public String toString() {
-        return "Кличка: " + name + " Страна обитания: " + location + " Состояние здоровья: " + health + " Сколько особей: " + counter;
-    }
 }
